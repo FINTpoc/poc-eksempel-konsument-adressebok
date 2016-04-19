@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <!--<label for="mail" class="col-sm-3 control-label">Besøker</label>
+      <div class="col-sm-9">-->
+      <div class="input-group">
+        <input type="text" class="form-control" name="visit" ng-model="searchFor" placeholder="Hvem søker du?">
+<span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="reset()">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </span>
+      </div>
+
+      <select class="form-control" size="25" name="owner" ng-model="selectedEmployee" ng-options="e.fornavn + ' ' + e.etternavn for e in employees | filter:searchFor">
+        <!--<option ng-repeat="e in visiting" value="{{e.dn}}">{{e.fullname}} ({{e.brfkdisplaynamelocation}})</option>-->
+      </select>
+
+    </div>
+
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default" ng-show="selectedEmployee">
+      <div class="panel-body">
+
+        <p>
+          <img src="images/mann.png" alt="Profilbilde" class="img-circle" width="100" ng-show="isMale(selectedEmployee)">
+          <img src="images/kvinne.png" alt="Profilbilde" class="img-circle" width="100" ng-show="!isMale(selectedEmployee)">
+        </p>
+
+
+        <table class="table table-borded table-striped">
+          <tr>
+            <th>Fornavn</th>
+            <td>
+              {{selectedEmployee.fornavn}}
+            </td>
+          </tr>
+          <tr>
+            <th>Etternavn</th>
+            <td>
+              {{selectedEmployee.etternavn}}
+            </td>
+          </tr>
+          <tr>
+            <th>Mobil</th>
+            <td>
+              {{selectedEmployee.mobil}}
+            </td>
+          </tr>
+          <tr>
+            <th>Epost</th>
+            <td>
+              {{selectedEmployee.epost}}
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
