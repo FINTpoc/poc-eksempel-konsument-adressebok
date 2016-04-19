@@ -4,7 +4,7 @@
       <!--<label for="mail" class="col-sm-3 control-label">Besøker</label>
       <div class="col-sm-9">-->
       <div class="input-group">
-        <input type="text" class="form-control" name="visit" ng-model="searchFor" placeholder="Hvem søker du?">
+        <input type="text" class="form-control" name="visit" ng-model="searchFor" ng-keyup="search()" placeholder="Hvem søker du?">
 <span class="input-group-btn">
         <button type="button" class="btn btn-default" ng-click="reset()">
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
@@ -12,8 +12,7 @@
       </span>
       </div>
 
-      <select class="form-control" size="25" name="owner" ng-model="selectedEmployee" ng-options="e.fornavn + ' ' + e.etternavn for e in employees | filter:searchFor">
-        <!--<option ng-repeat="e in visiting" value="{{e.dn}}">{{e.fullname}} ({{e.brfkdisplaynamelocation}})</option>-->
+      <select class="form-control" size="25" name="employees" ng-model="selectedEmployee" ng-options="e.navn.fornavn + ' ' + e.navn.etternavn for e in employees">
       </select>
 
     </div>
@@ -33,13 +32,13 @@
           <tr>
             <th>Fornavn</th>
             <td>
-              {{selectedEmployee.fornavn}}
+              {{selectedEmployee.navn.fornavn}}
             </td>
           </tr>
           <tr>
             <th>Etternavn</th>
             <td>
-              {{selectedEmployee.etternavn}}
+              {{selectedEmployee.navn.etternavn}}
             </td>
           </tr>
           <tr>

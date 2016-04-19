@@ -8,7 +8,7 @@
  * Controller of the eksempelKonsumentAdressebokApp
  */
 angular.module('eksempelKonsumentAdressebokApp')
-  .controller('MainCtrl', function($scope) {
+  .controller('MainCtrl', function($scope, Ansatt) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,44 +18,25 @@ angular.module('eksempelKonsumentAdressebokApp')
     $scope.reset = function() {
         $scope.searchFor = "";
         $scope.selectedEmployee = "";
+        $scope.employees = [];
     };
 
     $scope.isMale = function(e) {
       var ret = false;
       if (e) {
-        if (e.kjonn === 'mann') {
+        if (e.kjonn === 'MANN') {
           ret = true;
         }
       }
-
       return ret;
     };
-    $scope.employees = [{
-      'fornavn': 'Frode',
-      'etternavn': 'Sjovatsen',
-      'mobil': '90882080',
-      'epost': 'frode.sjovatsen@rogfk.no',
-      'kjonn': 'mann'
-    }, {
-      'fornavn': 'Hege',
-      'etternavn': 'Stubhaug',
-      'mobil': '92820321',
-      'epost': 'hege.stubhaug@hfk.no',
-      'kjonn': 'kvinne'
-    }, {
-      'fornavn': 'Ole Anders',
-      'etternavn': 'Eidjord',
-      'mobil': '',
-      'epost': 'ole.anders.eidjord@vaf.no',
-      'kjonn': 'mann'
-    }, {
-      'fornavn': 'Jarle',
-      'etternavn': 'Hansen',
-      'mobil': '90909090',
-      'epost': 'jarle@jarlehansen.net',
-      'kjonn': 'mann'
-    }];
-    console.log($scope.employees);
 
+    $scope.search = function() {
+      var searchString = $scope.searchFor;
+      if (searchString.length > 0) {
+        $scope.employees = Ansatt.query({navn: searchString});
+        //console.log($scope.employees);
+      }
+    };
 
   });
