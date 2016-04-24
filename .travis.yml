@@ -9,6 +9,7 @@ before_install:
  - npm install -g npm@2
  - npm install
  - npm install -g bower
+ - npm install -g grunt-cli grunt
  - bower install
 script:
  - ./gradlew grunt_build webjar
