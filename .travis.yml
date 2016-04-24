@@ -6,6 +6,7 @@ before_install:
  - curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
  - sudo apt-get install -y nodejs
  - export PATH=$PATH:/usr/bin/node
+ - npm install -g npm@2
  - npm install
  - bower install
 script:
