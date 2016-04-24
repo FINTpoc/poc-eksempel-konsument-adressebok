@@ -10,8 +10,7 @@ before_install:
  - npm install -g bower
  - npm install -g grunt-cli grunt
  - bower install
+install: true
 script:
  - grunt build
  - ./gradlew webjar
-
-
