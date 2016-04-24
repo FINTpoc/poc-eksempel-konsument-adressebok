@@ -1,0 +1,21 @@
+plugins {
+  id "com.moowork.grunt" version "0.11"
+}
+
+apply plugin: "java"
+apply plugin: "maven"
+
+defaultTasks 'installGrunt', 'clean', 'grunt_build', 'webjar', 'install'
+
+task webjar(type: Jar, dependsOn: "jar") {
+  from(fileTree("dist")) {
+    into "META-INF/resources/adressebok"
+  }
+}
+
+clean {
+  delete "dist"
+}
+
+group="no.fk.eksempel"
+version = '0.0.1-SNAPSHOT'

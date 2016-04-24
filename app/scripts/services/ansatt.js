@@ -9,5 +9,5 @@
  */
 angular.module('eksempelKonsumentAdressebokApp')
   .factory('Ansatt', function ($resource) {
-      return $resource('http://localhost:8080/ansatte');
+      return $resource('/ansatte');
   });
