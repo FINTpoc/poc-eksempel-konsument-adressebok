@@ -8,3 +8,4 @@ before_install:
  - export PATH=$PATH:/usr/bin/node
 script:
  - ./gradlew
+
