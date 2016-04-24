@@ -11,6 +11,6 @@ before_install:
  - npm install -g bower
  - bower install
 script:
- - ./gradlew --stacktrace
+ - ./gradlew grunt_build webjar --stacktrace
 
 
