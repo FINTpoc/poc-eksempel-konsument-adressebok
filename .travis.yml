@@ -8,6 +8,7 @@ before_install:
  - export PATH=$PATH:/usr/bin/node
  - npm install -g npm@2
  - npm install
+ - npm install -g bower
  - bower install
 script:
  - ./gradlew --stacktrace
