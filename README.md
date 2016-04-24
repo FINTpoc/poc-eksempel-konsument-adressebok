@@ -1,7 +1,6 @@
 # eksempel-konsument-adressebok
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+[![Build Status](https://travis-ci.org/FINTprosjektet/eksempel-konsument-adressebok.svg?branch=master)](https://travis-ci.org/FINTprosjektet/eksempel-konsument-adressebok)
 
 ## Build & development
 
