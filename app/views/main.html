@@ -12,7 +12,7 @@
       </span>
       </div>
 
-      <select class="form-control" size="25" name="employees" ng-model="selectedEmployee" ng-options="e.navn.fornavn + ' ' + e.navn.etternavn for e in employees">
+      <select class="form-control" size="25" name="employees" ng-model="selectedEmployee" ng-options="e.navn.fornavn + ' ' + e.navn.etternavn group by e.avdeling for e in employees">
       </select>
 
     </div>
