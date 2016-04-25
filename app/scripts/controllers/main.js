@@ -34,7 +34,7 @@ angular.module('eksempelKonsumentAdressebokApp')
     $scope.search = function() {
       var searchString = $scope.searchFor;
       if (searchString.length > 0) {
-        $scope.employees = Ansatt.query({navn: searchString});
+        $scope.employees = Ansatt.query({name: searchString});
         //console.log($scope.employees);
       }
     };
