@@ -5,7 +5,7 @@ plugins {
 apply plugin: "java"
 apply plugin: "maven"
 
-defaultTasks 'installGrunt', 'clean', 'grunt_build', 'webjar', 'install'
+defaultTasks 'clean', 'grunt_build', 'webjar', 'install'
 
 task webjar(type: Jar, dependsOn: "jar") {
   from(fileTree("dist")) {
