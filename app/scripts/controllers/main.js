@@ -33,7 +33,7 @@ angular.module('eksempelKonsumentAdressebokApp')
 
     $scope.search = function() {
       var searchString = $scope.searchFor;
-      if (searchString.length > 0) {
+      if (searchString.length > 3) {
         var result = Ansatt.get({name: searchString}, function() {
           $scope.employees = result.results;
         })
