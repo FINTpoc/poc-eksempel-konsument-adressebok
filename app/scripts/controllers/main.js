@@ -17,7 +17,6 @@ angular.module('eksempelKonsumentAdressebokApp')
 
     $scope.user = User.get();
     $scope.reset = function() {
-        $scope.user = {};
         $scope.searchFor = "";
         $scope.selectedEmployee = "";
         $scope.employees = [];
