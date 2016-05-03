@@ -8,14 +8,16 @@
  * Controller of the eksempelKonsumentAdressebokApp
  */
 angular.module('eksempelKonsumentAdressebokApp')
-  .controller('MainCtrl', function($scope, Ansatt) {
+  .controller('MainCtrl', function($scope, Ansatt, User) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
+    $scope.user = User.get();
     $scope.reset = function() {
+        $scope.user = {};
         $scope.searchFor = "";
         $scope.selectedEmployee = "";
         $scope.employees = [];
